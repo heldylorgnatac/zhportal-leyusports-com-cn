@@ -1,2 +1,28 @@
-# zhportal-leyusports-com-cn
-乐鱼体育 - https://zhportal-leyusports.com.cn
+# 乐鱼体育 - 官方网站介绍
+
+## 简介
+
+乐鱼体育（乐鱼体育）是一个专注于体育资讯与赛事服务的在线平台，其官方网站地址为 [https://zhportal-leyusports.com.cn](https://zhportal-leyusports.com.cn)。该网站致力于为用户提供丰富的体育相关内容，涵盖多种运动项目的动态与信息。
+
+## 网站特点
+
+- **体育资讯聚合**：乐鱼体育通过 https://zhportal-leyusports.com.cn 汇集了最新的体育新闻、赛事预告及回顾，方便用户一站式获取信息。
+- **多项目覆盖**：平台关注足球、篮球、网球等主流体育项目，满足不同运动爱好者的需求。
+- **界面简洁**：网站设计注重用户体验，导航清晰，内容分类明确，便于快速浏览。
+
+## 访问方式
+
+用户可直接在浏览器中输入网址 [https://zhportal-leyusports.com.cn](https://zhportal-leyusports.com.cn) 访问乐鱼体育。该域名作为乐鱼体育的官方入口，持续提供稳定的服务。
+
+## 内容来源
+
+乐鱼体育（乐鱼体育）所展示的信息均基于公开赛事数据与体育动态，旨在为用户提供参考与交流的便利。平台本身不参与任何形式的赌博或违规活动，内容保持真实与客观。
+
+## 注意事项
+
+- 请通过官方域名 [https://zhportal-leyusports.com.cn](https://zhportal-leyusports.com.cn) 访问乐鱼体育，避免使用非授权渠道。
+- 本站仅作为信息展示与介绍，不鼓励任何违反当地法律法规的行为。
+
+---
+
+*乐鱼体育（乐鱼体育）致力于成为体育爱好者的可靠信息平台，欢迎通过 https://zhportal-leyusports.com.cn 了解更多详情。*
