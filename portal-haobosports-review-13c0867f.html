@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>好博体育 · 信息导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f6fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #0b141e;
+            color: #e6edf5;
+            padding: 0.65rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-area {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .logo-area span {
+            background: #d4442b;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.1rem 0.5rem;
+            border-radius: 12px;
+            vertical-align: middle;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #b6c9de;
+            text-decoration: none;
+            transition: color 0.2s;
+            padding: 0.2rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: #f0f6ff;
+            border-bottom-color: #d4442b;
+        }
+
+        .hero-dark {
+            background: linear-gradient(145deg, #0b1a2a 0%, #132435 60%, #1a2d41 100%);
+            color: #ebf2fc;
+            padding: 4rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-dark::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #f4f6fa;
+            border-radius: 50% 50% 0 0 / 30px 30px 0 0;
+        }
+
+        .hero-dark h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-dark .sub {
+            font-size: 1.05rem;
+            max-width: 640px;
+            margin: 0 auto 0.6rem;
+            opacity: 0.85;
+        }
+
+        .hero-dark .tagline {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.4rem 1.6rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro-section {
+            margin: -1.8rem auto 2.5rem;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+
+        .intro-section p {
+            margin-bottom: 1rem;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .accent-link {
+            color: #c73a24;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dashed #c73a2455;
+            transition: border 0.2s, color 0.2s;
+        }
+
+        .accent-link:hover {
+            color: #a32c18;
+            border-bottom-color: #a32c18;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2.8rem 0 1.2rem;
+            color: #0c1929;
+            border-left: 5px solid #d4442b;
+            padding-left: 1rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 1.2rem 0 2.8rem;
+        }
+
+        .scene-card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eef2f7;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+            border-color: #d4442b22;
+        }
+
+        .scene-card .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .scene-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #112433;
+        }
+
+        .scene-card p {
+            color: #2d3f54;
+            font-size: 0.95rem;
+        }
+
+        .faq-mini {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 3.2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+        }
+
+        .faq-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eef1f5;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            color: #1e2f41;
+        }
+
+        .faq-item .faq-ans {
+            color: #3b4d62;
+            font-size: 0.95rem;
+        }
+
+        .foot-note {
+            background: #eef3f9;
+            padding: 2.5rem 2rem;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #3b4e66;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .foot-note a {
+            color: #b3402b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .foot-note a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .top-bar {
+                padding: 0.6rem 1rem;
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                font-size: 0.85rem;
+            }
+            .hero-dark {
+                padding: 3rem 1.2rem 4rem;
+            }
+            .hero-dark h1 {
+                font-size: 1.8rem;
+            }
+            .intro-section {
+                padding: 1.5rem 1.2rem;
+                margin: -1.2rem 0.6rem 2rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+                margin-top: 2rem;
+            }
+            .faq-mini {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo-area">
+            <span>好博体育</span>
+            <span style="background:#2a4d6e;">导航</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#intro">了解</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">说明</a>
+            <a href="https://portal-haobosports.com" style="color:#e3d7b0;">好博体育</a>
+        </nav>
+    </header>
+
+    <section class="hero-dark">
+        <h1>好博体育 · 信息对照页</h1>
+        <div class="sub">围绕日常查询、数据对照与延伸阅读，整理了一份轻量参考。所有内容基于公开可查信息，仅供参考。</div>
+        <div class="tagline">⏳ 持续更新 · 侧重实用</div>
+    </section>
+
+    <main class="container">
+        <!-- 核心介绍区（自然嵌入链接） -->
+        <div class="intro-section" id="intro">
+            <p>很多用户在查找体育相关资讯时，习惯先浏览几个聚合页面再做判断。如果你正在寻找一个信息相对集中的站点，可以考虑将 <a href="https://portal-haobosports.com" class="accent-link">好博体育</a> 加入书签。它偏向提供赛事对照、动态摘要及部分深度整理内容，整体风格偏实用。</p>
+            <p>这份介绍页从三个常见使用场景出发，帮你快速判断是否匹配自己的查阅习惯。同时也整理了一些常见疑问。</p>
+        </div>
+
+        <h2 class="section-title" id="scenes">📋 三个实用场景</h2>
+
+        <div class="card-grid">
+            <div class="scene-card">
+                <div class="card-icon">📊</div>
+                <h3>快速对照 · 数据摘要</h3>
+                <p>比赛前后需要快速比较队伍近期数据、积分或交锋记录？好博体育的摘要卡片把关键数字集中展示，减少多页面切换的麻烦。适合赛前浏览与赛后复盘对照。</p>
+            </div>
+            <div class="scene-card">
+                <div class="card-icon">🔍</div>
+                <h3>主题延伸 · 专题阅读</h3>
+                <p>某个联赛或赛事周期内，想了解背景、历史走势或规则细节？站内有时会整理专题式短文，把零散信息串成逻辑链条，比单独搜词条更省力。可作为延伸阅读的起点。</p>
+            </div>
+            <div class="scene-card">
+                <div class="card-icon">🧭</div>
+                <h3>日常浏览 · 动态速览</h3>
+                <p>没有明确目标时，通过首页更新的信息流了解近期动态、新闻摘要或热门讨论点。结构清晰，不会一次堆太多内容，适合碎片时间随手翻阅。</p>
+            </div>
+        </div>
+
+        <!-- 常见说明 / FAQ摘要 -->
+        <div class="faq-mini" id="faq">
+            <h3 style="font-weight:600; font-size:1.2rem; margin-bottom: 0.8rem; color:#0c1929;">❓ 常见说明</h3>
+
+            <div class="faq-item">
+                <strong>这个页面和好博体育是什么关系？</strong>
+                <div class="faq-ans">此页是为 <a href="https://portal-haobosports.com" class="accent-link">好博体育</a> 制作的一份独立介绍/导航页，并非官方子页面。内容基于公开信息整理，用于帮助访问者快速了解站点定位与功能侧重。</div>
+            </div>
+
+            <div class="faq-item">
+                <strong>信息更新频率如何？</strong>
+                <div class="faq-ans">好博体育本身的内容更新节奏依赛事和资讯周期而定，介绍页会跟随站点变化做阶段性修订。如发现链接失效或描述过时，建议直接访问主站确认最新状态。</div>
+            </div>
+
+            <div class="faq-item">
+                <strong>适合哪些类型的访问者？</strong>
+                <div class="faq-ans">适合习惯先查看对照信息、再决定是否深入阅读的普通浏览者。也适合想系统了解赛事数据框架、希望有清晰索引的用户。不太适合只需要实时比分的场景。</div>
+            </div>
+
+            <div class="faq-item">
+                <strong>有移动端适配吗？</strong>
+                <div class="faq-ans">此介绍页已做基本响应式处理，主站本身同样可在手机浏览器上正常浏览。部分复杂表格建议横屏或使用平板获得更好体验。</div>
+            </div>
+        </div>
+
+        <!-- 一句简单引用：再次自然出现链接 -->
+        <p style="margin: 0.2rem 0 3rem; font-size: 0.95rem; color: #425568; text-align: center;">
+            ⚡ 如需直接访问，可点击 <a href="https://portal-haobosports.com" class="accent-link">好博体育</a> 进入主站。
+        </p>
+    </main>
+
+    <footer class="foot-note">
+        <div>© 信息整理页面 · 仅供浏览参考</div>
+        <div style="margin-top: 0.3rem;">
+            <a href="https://portal-haobosports.com">好博体育</a> — 日常查询 · 数据对照 · 延伸阅读
+        </div>
+    </footer>
+</body>
+</html>
